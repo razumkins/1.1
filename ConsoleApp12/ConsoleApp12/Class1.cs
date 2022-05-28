@@ -4,45 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace дз_рпм
+namespace ConsoleApp3bcv
 {
-    class drob
+    class Classdrob
     {
-        int Chis;
-        int Znam;
-        internal bool Znak;
-
-        public drob(int chis1, int znam1)
+        int chislitel;
+        int znaminatel;
+        public Classdrob(int chislitel, int znaminatel)
         {
-            Chis = chis1;
-            Znam = znam1;
+            this.chislitel = chislitel;
+            this.znaminatel = znaminatel;
         }
-        public drob(int chislo)
+        public Classdrob(int chislo)
         {
-            Chis = chislo;
-            Znam = 1;
+            this.chislitel = chislo;
+            this.znaminatel = 1;
         }
-        public drob(int celoe, int chis2, int znam2)
+        public Classdrob(int celoe, int chislitel, int znamenatel)
         {
-            Chis = celoe * znam2 + chis2;
-            Znam = znam2;
+            this.chislitel = celoe * znamenatel + chislitel;
+            this.znaminatel = znamenatel;
         }
         public double ToDouble()
         {
-            return (double)(Chis) / Znam;
+            return (Double)(this.chislitel) / this.znaminatel;
+
+
         }
-        public static drob operator *(drob a, drob b)
+        public static Classdrob operator *(Classdrob one, Classdrob two)
         {
-            return new drob(a.Chis * b.Chis, a.Znam * b.Znam);
+            return new Classdrob(one.chislitel * two.chislitel, one.znaminatel * two.znaminatel);
+
         }
-        public bool MyProperty
+        public bool Znak
         {
             get
             {
-                bool a = Chis >= 0;
-                bool b = Znam >= 0;
+                bool a = chislitel >= 0;
+                bool b = znaminatel >= 0;
                 return a == b;
+
             }
-        }
+            public delegate void pofi(Classdrob ofd, int znah);
     }
+
+}
 }
